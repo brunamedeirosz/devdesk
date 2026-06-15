@@ -2,15 +2,16 @@
 
 ## Relacionamentos
 
-Empresa 1:N Usuários
-Empresa 1:N Projetos
+Workspace 1:N Usuários
+Workspace 1:N Projetos
 Projeto N:N Usuários
 Projeto 1:N Tarefas
 Tarefa 1:N Comentários
 
 ## Desenho simples
 
-EMPRESA
+```text
+WORKSPACE
   ├── USUARIOS
   └── PROJETOS
         ├── PROJETO_USUARIOS

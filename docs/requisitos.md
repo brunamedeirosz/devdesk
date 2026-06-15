@@ -2,13 +2,15 @@
 
 ## Objetivo
 
-Plataforma para organização de equipes, projetos e tarefas.
+Plataforma para organização de projetos, tarefas e colaboração entre equipes, funcionando como um escritório virtual para profissionais de tecnologia, empresas e grupos de trabalho.
 
 ## Público-alvo
 
 - Equipes de TI
-- Empresas com times remotos
-- Empresas com times híbridos
+- Empresas com times remotos ou híbridos
+- Freelancers
+- Equipes pequenas
+- Estudantes que trabalham em grupo
 
 ## Funcionalidades V1
 
@@ -37,4 +39,4 @@ Plataforma para organização de equipes, projetos e tarefas.
 
 ## Diferencial
 
-Escritório virtual para acompanhamento de demandas e projetos em tempo real.
+Escritório virtual para acompanhamento de demandas, projetos e produtividade em um único ambiente, permitindo colaboração entre equipes ou uso individual.
