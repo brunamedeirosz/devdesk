@@ -1,5 +1,5 @@
-from django.db import models
 from django.contrib.auth.models import User
+from django.db import models
 
 
 class Workspace(models.Model):
@@ -41,7 +41,7 @@ class Tarefa(models.Model):
     descricao = models.TextField()
     prioridade = models.CharField(max_length=50)
     status = models.CharField(max_length=50)
-    prazo_entrega = models.DateTimeField()
+    prazo_entrega = models.DateTimeField(null=True, blank=True)
     criado_em = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -62,4 +62,24 @@ class Comentario(models.Model):
     criado_em = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'Comentário de {self.autor.username} em {self.tarefa.titulo}'
+        return f'Comentario de {self.autor.username} em {self.tarefa.titulo}'
+
+
+class Nota(models.Model):
+    usuario = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='notas'
+    )
+    titulo = models.CharField(max_length=120, default='Minha nota')
+    itens = models.JSONField(default=list, blank=True)
+    itens_concluidos = models.JSONField(default=list, blank=True)
+    pos_x = models.IntegerField(default=24)
+    pos_y = models.IntegerField(default=120)
+    fixada = models.BooleanField(default=False)
+    visivel = models.BooleanField(default=True)
+    criado_em = models.DateTimeField(auto_now_add=True)
+    atualizado_em = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'{self.titulo} - {self.usuario.username}'

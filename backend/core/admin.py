@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Workspace, Projeto, Tarefa, Comentario
+from .models import Comentario, Nota, Projeto, Tarefa, Workspace
 
 @admin.register(Workspace)
 class WorkspaceAdmin(admin.ModelAdmin):
@@ -19,3 +19,10 @@ class TarefaAdmin(admin.ModelAdmin):
 @admin.register(Comentario)
 class ComentarioAdmin(admin.ModelAdmin):
     list_display = ('tarefa', 'autor', 'criado_em')
+
+
+@admin.register(Nota)
+class NotaAdmin(admin.ModelAdmin):
+    list_display = ('titulo', 'usuario', 'fixada', 'visivel', 'atualizado_em')
+    list_filter = ('fixada', 'visivel')
+    search_fields = ('titulo', 'usuario__username')
